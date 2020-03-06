@@ -35,6 +35,7 @@
                         Name = "3"
                     }
                 });
+            context.SaveChanges();
             context.Products.AddOrUpdate(user => user.Id,
                  new Product[]
                  {

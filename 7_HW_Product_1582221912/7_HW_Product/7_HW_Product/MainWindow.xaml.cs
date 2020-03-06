@@ -30,7 +30,8 @@ namespace _7_HW_Product
         {
             using (EFContext context = new EFContext())
             {
-                result.ItemsSource = context.Products.Where(t => t.Name == tbox.Text);
+                // SELECT * FROM Products WHERE Name LIKE tbox,Text
+                dgInfo.ItemsSource = context.Products.Where(t => t.Name == tbox.Text).ToList();
             }
         }
 
@@ -38,7 +39,7 @@ namespace _7_HW_Product
         {
             using (EFContext context = new EFContext())
             {
-                result.ItemsSource = null;
+                dgInfo.ItemsSource = null;
             }
         }
     }

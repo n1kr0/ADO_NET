@@ -1,0 +1,28 @@
+﻿<Window x:Class="PersonalsApp.Photo_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalsApp"
+        mc:Ignorable="d"
+        Title="Photo_Window" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="19*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="319*"/>
+            <RowDefinition Height="100*"/>
+        </Grid.RowDefinitions>
+        <ListView Name="lvPhoto" Margin="10">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Додати фото" Click="Button_Click" Grid.Column="1" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="151" Height="37"/>
+
+    </Grid>
+</Window>
