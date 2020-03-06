@@ -1,0 +1,47 @@
+﻿<Window x:Class="PersonalsApp.AddPersonalWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PersonalsApp"
+        mc:Ignorable="d"
+        Title="AddPersonalWindow" Height="473.785" Width="473.679">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="39*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="204*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="41*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="164*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="Phone:" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center"  />
+        <TextBox x:Name="tbPhone" Grid.Row="0" Grid.Column="2" Margin="5" />
+        <TextBlock Text="First Name:" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center"  />
+        <TextBox x:Name="tbFirstName" Grid.Row="1" Grid.Column="2" Margin="5" />
+        <TextBlock Text="Last Name:" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center"  />
+        <TextBox x:Name="tbLastName" Grid.Row="2" Grid.Column="2" Margin="5" />
+        <TextBlock Text="Date of Birth:" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center" Height="16" Margin="16,13" Width="70"  />
+        <DatePicker x:Name="dpDateOfBirth" Grid.Row="3" Grid.Column="2" Margin="5" />
+        <TextBlock Text="Photo:" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center" Height="16" Margin="34,94" Width="34" />
+        <StackPanel Grid.Row="4" Grid.Column="2" Margin="5" Grid.RowSpan="3">
+            <Image x:Name="imgPhoto" Height="150" />
+            <Button Click="btnChoosePhoto_Click" x:Name="btnChoosePhoto" Content="Choose photo..."  />
+        </StackPanel>
+        <TextBlock Text="Role:" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"  HorizontalAlignment="Center" Margin="38,9,38,8" Height="16" Width="26"/>
+        <ComboBox Loaded="cbRole_Loaded" x:Name="cbRole" Grid.Row="5" Grid.Column="2" Margin="5" >
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}" />
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <Button Click="btnSave_Click" x:Name="btnSave" Content="Save" Grid.Column="0" Grid.ColumnSpan="3" Margin="5" Grid.Row="6" />
+    </Grid>
+</Window>
