@@ -15,7 +15,7 @@
             <RowDefinition Height="319*"/>
             <RowDefinition Height="100*"/>
         </Grid.RowDefinitions>
-        <ListView Name="lvPhoto" Margin="10" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListView Loaded="lvPhoto_Loaded" Name="lvPhoto" Margin="10" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Image Width="100" Height="100" Source="{Binding Image}" />

@@ -1,6 +1,8 @@
 ﻿using Microsoft.Win32;
+using PersonalsApp.Data.Models;
 using PersonalsApp.Data.Services;
 using PersonalsApp.Helpers;
+using PersonalsApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,9 +21,7 @@ using System.Windows.Shapes;
 
 namespace PersonalsApp
 {
-    /// <summary>
-    /// Логика взаимодействия для Photo_Window.xaml
-    /// </summary>
+    
     public partial class Photo_Window : Window
     {
         private PhotoService _photoService;
@@ -41,6 +41,33 @@ namespace PersonalsApp
             System.Drawing.Image img = System.Drawing.Image.FromFile(dlg.FileName);
             img = CompressImage.CreateImage((Bitmap)img, 500, 500);
             img.Save(Environment.CurrentDirectory + "//" + imageName, ImageFormat.Jpeg);
+
+            Data.Models.User_Photo user_Photo = new User_Photo();
+            {
+                user_Photo.Name = imageName;
+                user_Photo.User_Id = StartWindow.selectID;
+            }
+
+            PhotoService photoService = new PhotoService();
+            photoService.Add(user_Photo);
+
+
+
+        }
+
+        private void lvPhoto_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<PhotoViewModel> users = new List<PhotoViewModel>();
+            foreach (var item in _photoService.GetPhoto(StartWindow.selectID))
+            {
+                PhotoViewModel model = new PhotoViewModel()
+                {                 
+                    ImagePath = item.Name,
+                    Image = new BitmapImage(new System.Uri(Environment.CurrentDirectory + "//" + item.Name, UriKind.Absolute))
+                };
+                users.Add(model);
+            }
+            lvPhoto.ItemsSource = users;
 
         }
     }

@@ -22,21 +22,29 @@ namespace PersonalsApp
         {
             InitializeComponent();
         }
+        public static int selectID;
 
         private void btnEnter_Click(object sender, RoutedEventArgs e)
         {
             using (EFContext context = new EFContext())
             {
-
-                context.Accounts.FirstOrDefault(t => t.Login == tbLogin.Text && t.Password == pbPassword.Password);
-                MainWindow dlg = new MainWindow();
-                this.Hide();
-                var mainWindow = dlg.ShowDialog();
-                if (mainWindow.HasValue && mainWindow.Value)
+                //context.Accounts.FirstOrDefault(t => t.Login == tbLogin.Text && t.Password == pbPassword.Password);
+                 
+                var tmpAccount = context.Accounts.FirstOrDefault(t => t.Login == tbLogin.Text && t.Password == pbPassword.Password);
+                if (tmpAccount != null)
                 {
-                    this.Show();
-                }
-                //this.Close();
+                    selectID = tmpAccount.Id;
+                    MainWindow dlg = new MainWindow();
+                    this.Hide();
+                    var mainWindow = dlg.ShowDialog();
+                    if (mainWindow.HasValue && mainWindow.Value)
+                    {
+                        this.Show();
+
+                    }
+
+                }  
+
             }
             
         }
