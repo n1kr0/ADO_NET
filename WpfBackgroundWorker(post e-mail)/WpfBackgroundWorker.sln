@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Worker", "Worker\Worker.csproj", "{E4D82FD8-3CDE-4BCA-B383-A383BAE087D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfBackgroundWorker", "WpfBackgroundWorker\WpfBackgroundWorker.csproj", "{E515D5AF-3DAA-4987-AC36-D932E0C55BAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E4D82FD8-3CDE-4BCA-B383-A383BAE087D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E4D82FD8-3CDE-4BCA-B383-A383BAE087D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E4D82FD8-3CDE-4BCA-B383-A383BAE087D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E4D82FD8-3CDE-4BCA-B383-A383BAE087D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E515D5AF-3DAA-4987-AC36-D932E0C55BAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E515D5AF-3DAA-4987-AC36-D932E0C55BAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E515D5AF-3DAA-4987-AC36-D932E0C55BAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E515D5AF-3DAA-4987-AC36-D932E0C55BAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CB40509A-2B16-4C89-B916-8837B0A1A809}
+		SolutionGuid = {B6F737EE-87E1-479C-AF2D-48B300A9C2D3}
 	EndGlobalSection
 EndGlobal

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Worker.Properties
+namespace WpfBackgroundWorker.Properties
 {
 
 
